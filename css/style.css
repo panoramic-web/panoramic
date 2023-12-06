@@ -20,6 +20,10 @@
    scroll-behavior: smooth;
 }
 
+:root {
+   --light-color: #fff;
+}
+
 html,
 body {
    width: 100%;
@@ -89,7 +93,7 @@ h6 {
 }
 
 #nav.fixed {
-   background: #fff;
+   background: var(--light-color);
 }
 
 #nav-content {
@@ -108,7 +112,7 @@ h6 {
 }
 
 #nav-content .logo {
-   color: #000;
+   color: var(--light-color);
    font-size: 2rem;
    font-weight: bold;
 }
@@ -123,7 +127,7 @@ h6 {
 
 #nav-content #menu .item a {
    position: relative;
-   color: #0007;
+   color: var(--light-color);
    font-weight: bold;
    letter-spacing: 1px;
    text-transform: uppercase;
@@ -160,9 +164,9 @@ h6 {
 
 #nav-content #menu-icon span {
    display: block;
-   width: 20px;
-   height: 1px;
-   background: #000;
+   width: 25px;
+   height: 2px;
+   background: var(--light-color);
 }
 
 #nav-content #menu-icon span:first-child {
@@ -215,7 +219,7 @@ h6 {
    margin-bottom: 3rem;
    font-weight: normal;
    text-transform: lowercase;
-   color: #fff;
+   color: var(--light-color);
 }
 
 #header-content .content .title span {
@@ -232,7 +236,7 @@ h6 {
    background: none;
    border: none;
    outline: none;
-   color: #fff;
+   color: var(--light-color);
    padding: 1rem 2rem;
    font-size: 1rem;
    background: #79C4F1;
@@ -242,7 +246,7 @@ h6 {
 
 #header-content .content .learn_more:hover {
    background: #0007;
-   color: #fff;
+   color: var(--light-color);
 }
 
 
@@ -383,7 +387,7 @@ h6 {
 .card {
    width: 300px;
    height: 100%;
-   background: #fff;
+   background: var(--light-color);
    border: none;
    padding: 2.5rem;
    border-radius: 20px;
@@ -397,7 +401,7 @@ h6 {
    top: 2rem;
    right: -3rem;
    background: red;
-   color: #fff;
+   color: var(--light-color);
    padding: .5rem 5rem;
    transform: rotate(50deg)
 }
@@ -437,7 +441,7 @@ h6 {
 .card .bottom button {
    background: #333;
    border: none;
-   color: #fff;
+   color: var(--light-color);
    font-weight: 700;
    padding: .8rem 1.3rem;
    font-size: 1.2rem;
@@ -466,7 +470,7 @@ h6 {
 
 .swiper-button-next,
 .swiper-button-prev {
-   background: #fff;
+   background: var(--light-color);
    border: 1px solid crimson;
    border-radius: 50px;
    width: 50px;
@@ -488,7 +492,7 @@ h6 {
       top: -100%;
       left: 0;
       padding: 2rem;
-      background: #fff;
+      background: var(--light-color);
       z-index: 200;
       transition: right .3s;
       flex-direction: column;
