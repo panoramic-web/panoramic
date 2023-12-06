@@ -32,8 +32,7 @@ body {
 @media only screen and (max-width: 600px) {
 
    html,
-   body {
-   }
+   body {}
 }
 
 ul {
@@ -69,7 +68,7 @@ h6 {
 #header {
    width: 100%;
    height: max-content;
-   /* background: url("./images/photo-1678972726040-2f2cefc3cefa.jpeg") no-repeat top / cover; */
+   background: url("../img/ales-nesetril-Im7lZjxeLhg-unsplash.jpg") no-repeat top / cover;
 }
 
 #header-content {
@@ -215,6 +214,8 @@ h6 {
    text-align: left;
    margin-bottom: 3rem;
    font-weight: normal;
+   text-transform: lowercase;
+   color: #fff;
 }
 
 #header-content .content .title span {
@@ -223,11 +224,9 @@ h6 {
    margin-top: 1rem;
    font-size: 3rem;
    letter-spacing: 2px;
-   color: #000;
    font-weight: 800;
    text-transform: uppercase;
 }
-
 
 #header-content .content .learn_more {
    background: none;
@@ -585,4 +584,4 @@ h6 {
    #main .service_plans .description {
       margin: 2rem 6%;
    }
-  }
+   }
