@@ -99,7 +99,7 @@ h6 {
 #nav-content {
    width: 100%;
    max-width: 1300px;
-   height: 80px;
+   height: 100px;
    margin: 0 auto;
    display: flex;
    justify-content: space-between;
@@ -122,7 +122,7 @@ h6 {
 }
 
 #nav-content #menu .item {
-   margin-left: 2rem;
+   margin-left: 20px;
 }
 
 #nav-content #menu .item a {
@@ -130,13 +130,14 @@ h6 {
    color: var(--light-color);
    font-weight: bold;
    letter-spacing: 1px;
+   font-size: .8rem;
    text-transform: uppercase;
 }
 
 #nav-content #menu .item a:before {
    content: "";
    position: absolute;
-   background: #0007;
+   background: #2497DC;
    width: 70%;
    height: 1.5px;
    left: 0;
@@ -144,6 +145,14 @@ h6 {
    transform: scaleX(0);
    transform-origin: left;
    transition: .3s;
+}
+
+#nav-content #menu .item .active {
+   color: #2497DC;
+}
+
+#nav-content #menu .item a:hover {
+   color: #2497DC;
 }
 
 #nav-content #menu .item .active:before,
@@ -185,12 +194,12 @@ h6 {
    position: absolute;
    width: 100%;
    max-width: 1300px;
-   margin: 0 auto;
    height: 100%;
+   margin: 0 auto;
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
-   padding: 0 3rem;
+   padding: 0 30px;
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -201,10 +210,10 @@ h6 {
    width: 500px;
    height: 500px;
    background: #79C4F1;
-   box-shadow: inset 50px -50px 100px #55B0E7, -30px 30px 50px #2497DC;
+   box-shadow: inset 50px -50px 100px #55B0E7, 50px 50px 200px #2497DC;
    border-radius: 600px;
    top: -250px;
-   right: 0;
+   left: -250px;
 }
 
 #header-content .content .banner {
@@ -222,8 +231,16 @@ h6 {
    color: var(--light-color);
 }
 
+#header-content .content .title hr {
+   height: 4px;
+   border: none;
+   background: transparent;
+   width: 30%;
+   margin: 20px 0;
+   box-shadow: inset 50px -50px 100px #55B0E7, 0 0 30px #2497DC;
+}
+
 #header-content .content .title span {
-   position: relative;
    display: block;
    margin-top: 1rem;
    font-size: 3rem;
@@ -240,8 +257,15 @@ h6 {
    padding: 1rem 2rem;
    font-size: 1rem;
    background: #79C4F1;
-   box-shadow: inset 10px -10px 10px #55B0E7, -5px 5px 10px #2497DC;
+   text-transform: uppercase;
+   letter-spacing: 3px;
+   box-shadow: inset 50px -50px 100px #55B0E7;
    border-radius: 10px;
+   transition: .3s;
+}
+
+#header-content .content .learn_more:hover {
+   box-shadow: inset 50px -50px 100px #55B0E7, 0 0 30px #2497DC;
 }
 
 #header-content .content .learn_more:hover {
