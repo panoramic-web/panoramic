@@ -1,5 +1,4 @@
 var menu = document.querySelector('#menu'),
-   menu_close = document.querySelector('.menu_close'),
    menu_icon = document.querySelector('#menu-icon'),
    header = document.querySelector('#header-content'),
    nav = document.querySelector('#nav');
@@ -11,11 +10,6 @@ menu_icon.onclick = () => {
    menu.classList.toggle('active');
 };
 
-menu_close.onclick = () => {
-   menu.classList.toggle('active');
-};
-
-
 onscroll = () => {
    if (pageYOffset > 0) {
       nav.classList.add('fixed');
@@ -24,6 +18,32 @@ onscroll = () => {
       nav.classList.remove('fixed');
    }
 };
+
+
+// window.onclick = function(e) {
+//    if (!e.target.matches(menu)) {
+//       if (menu.classList.contains('active')) {
+//          menu.classList.remove('active');
+//       }
+//    }
+// };
+
+
+
+
+/*
+// Close the dropdown if the user clicks outside of it
+
+window.onclick = function(e) {
+   if (!e.target.matches('.dropbtn')) {
+      var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+         myDropdown.classList.remove('show');
+      }
+   }
+}
+*/
+
 
 
 
