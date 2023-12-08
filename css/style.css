@@ -93,7 +93,7 @@ h6 {
 }
 
 #nav.fixed {
-   background: var(--light-color);
+   background: #000;
 }
 
 #nav-content {
@@ -111,15 +111,43 @@ h6 {
    height: 60px;
 }
 
-#nav-content .logo {
+#nav-content div {
+   display: flex;
+   align-items: center;
+}
+
+#nav-content div .logo {
    color: var(--light-color);
    font-size: 2rem;
    font-weight: bold;
+   margin-left: 1rem;
 }
 
-#nav.fixed .logo {
+#nav.fixed div .logo {
    color: #2497DC;
 }
+
+#nav-content #menu-icon {
+   background: none;
+   border: none;
+   padding: 0;
+   display: none;
+   margin-left: 1rem;
+}
+
+#nav-content #menu-icon span {
+   display: block;
+   width: 25px;
+   height: 2px;
+   background: var(--light-color);
+}
+
+#nav-content #menu-icon span:first-child {
+   margin-bottom: 7px;
+}
+
+
+
 
 #nav-content #menu {
    display: flex;
@@ -165,26 +193,30 @@ h6 {
 }
 
 
-
-
-#nav-content #menu-icon {
+#nav-content .contact-btn {
    background: none;
    border: none;
-   padding: 0;
-   display: none;
-   margin-left: 1rem;
+   outline: none;
+   color: var(--light-color);
+   padding: .5rem 1rem;
+   font-size: 1rem;
+   background: #79C4F1;
+   font-weight: bold;
+   text-transform: uppercase;
+   box-shadow: inset 50px -50px 100px #55B0E7;
+   border-radius: 10px;
+   transition: .3s;
 }
 
-#nav-content #menu-icon span {
-   display: block;
-   width: 25px;
-   height: 2px;
-   background: var(--light-color);
+#nav-content .contact-btn:hover {
+   background: #0007;
+   color: var(--light-color);
+   box-shadow: inset 50px -50px 100px #55B0E7, 0 0 30px #2497DC;
 }
 
-#nav-content #menu-icon span:first-child {
-   margin-bottom: 7px;
-}
+
+
+
 
 
 
@@ -199,14 +231,13 @@ h6 {
    border-radius: 500px;
    top: -200px;
    left: -200px;
-   z-index: 0;
 }
 
 #header-content .content {
    position: absolute;
    width: 100%;
    max-width: 1300px;
-   height: 100%;
+   min-height: 100%;
    margin: 0 auto;
    top: 50%;
    left: 50%;
@@ -215,19 +246,52 @@ h6 {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   z-index: 1000;
+   z-index: 50;
 }
+
+
+@keyframes text_anim {
+   0% {
+      background: linear-gradient(#fff, #2497DC);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+   }
+
+   40% {
+      background: linear-gradient(#fff, #2497DC, #fff, #2497DC);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+   }
+
+   80% {
+      background: linear-gradient(#fff, #2497DC, #fff, #2497DC, #fff, #2497DC);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+   }
+
+   100% {
+      background: linear-gradient(#fff, #2497DC, #fff, #2497DC, #fff, #2497DC, #fff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+
+   }
+}
+
 
 #header-content .content .title {
    max-width: 600px;
-   text-align: left;
+   font-size: 3rem;
+   letter-spacing: 2px;
+   font-weight: 800;
+   text-transform: uppercase;
    margin-bottom: 3rem;
-   font-weight: normal;
-   text-transform: lowercase;
-   background: linear-gradient(#fff, #2497DC);
-   background-clip: text;
-   -webkit-background-clip: text;
-   color: transparent;
+   /* -webkit-box-reflect: below -30px linear-gradient(rgba(0, 0, 0, .1), white); */
+   animation: text_anim 3s linear infinite;
+   transition: 3s;
 }
 
 #header-content .content .title hr {
@@ -239,15 +303,6 @@ h6 {
    box-shadow: inset 50px -50px 100px #55B0E7, 0 0 30px #2497DC;
 }
 
-#header-content .content .title span {
-   display: block;
-   margin-top: 1rem;
-   font-size: 3rem;
-   letter-spacing: 2px;
-   font-weight: 800;
-   text-transform: uppercase;
-}
-
 #header-content .content .learn_more {
    background: none;
    border: none;
@@ -256,8 +311,9 @@ h6 {
    padding: 1rem 2rem;
    font-size: 1rem;
    background: #79C4F1;
+   font-weight: bold;
    text-transform: uppercase;
-   letter-spacing: 3px;
+   letter-spacing: 2px;
    box-shadow: inset 50px -50px 100px #55B0E7;
    border-radius: 10px;
    transition: .3s;
@@ -265,9 +321,6 @@ h6 {
 
 #header-content .content .learn_more:hover {
    box-shadow: inset 50px -50px 100px #55B0E7, 0 0 30px #2497DC;
-}
-
-#header-content .content .learn_more:hover {
    background: #0007;
    color: var(--light-color);
 }
@@ -296,12 +349,67 @@ h6 {
 
 
 
+@media only screen and (max-width:1000px) {
+   #nav-content #menu {
+      position: fixed;
+      width: 50%;
+      height: 100vh;
+      top: 0;
+      left: -100%;
+      padding: 4rem;
+      background: #000;
+      z-index: 200;
+      transition: .3s;
+      flex-direction: column;
+      justify-content: center;
+   }
+
+   #nav-content #menu.active {
+      left: 0;
+   }
+
+   #nav-content #menu .item {
+      margin: 20px 0;
+   }
+
+   #nav-content #menu-icon {
+      display: block;
+   }
+}
+
+
+@media only screen and (max-width: 700px) {
+   #nav-content .logo {
+      font-size: 1.5rem;
+   }
+
+   #header-content .content {
+      top: 0;
+      left: 0;
+      transform: none;
+      padding: 30px;
+   }
+
+   #header-content .content .title {
+      width: 100%;
+   }
+
+   #header-content .content .title span {
+      display: inline-block;
+   }
+}
+
+
+
+
+
 
 
 
 
 #main .about {
    width: 100%;
+   background: url("../icons/bg.svg") no-repeat left top / cover;
 }
 
 #main .about-content {
@@ -515,65 +623,7 @@ h6 {
 
 
 
-
-
-@media only screen and (max-width:1000px) {
-   #nav-content #menu {
-      position: fixed;
-      width: max-content;
-      height: 100vh;
-      top: 0;
-      left: -100%;
-      padding: 4rem;
-      background: #000;
-      z-index: 200;
-      transition: .3s;
-      flex-direction: column;
-      justify-content: center;
-   }
-
-   #nav-content #menu.active {
-      left: 0;
-   }
-
-   #nav-content #menu .item {
-      margin: 20px 0;
-   }
-
-   #nav-content #menu-icon {
-      display: block;
-   }
-}
-
-
-
-
 @media only screen and (max-width: 700px) {
-   #nav-content .logo {
-      font-size: 1.5rem;
-   }
-
-
-
-
-
-
-   #header-content .content {
-      position: static;
-      transform: none;
-      padding: 30px;
-   }
-
-   #header-content .content .title {
-      width: 100%;
-   }
-
-   #header-content .content .title span {
-      display: inline-block;
-   }
-
-
-
    #main .services .cards {
       grid-template: auto / 1fr;
    }
