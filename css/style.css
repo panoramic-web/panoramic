@@ -21,6 +21,8 @@
 }
 
 :root {
+   --primary-color: #2497DC;
+   --primary-color-light: #55B0E7;
    --light-color: #fff;
 }
 
@@ -36,7 +38,9 @@ body {
 @media only screen and (max-width: 600px) {
 
    html,
-   body {}
+   body {
+      font-size: 15px;
+   }
 }
 
 ul {
@@ -93,6 +97,7 @@ h6 {
 }
 
 #nav.fixed {
+   transition: .3s;
    background: #000;
 }
 
@@ -107,10 +112,6 @@ h6 {
    transition: .3s;
 }
 
-#nav.fixed #nav-content {
-   height: 60px;
-}
-
 #nav-content div {
    display: flex;
    align-items: center;
@@ -120,11 +121,10 @@ h6 {
    color: var(--light-color);
    font-size: 2rem;
    font-weight: bold;
-   margin-left: 1rem;
 }
 
 #nav.fixed div .logo {
-   color: #2497DC;
+   color: var(--light-color);
 }
 
 #nav-content #menu-icon {
@@ -132,14 +132,14 @@ h6 {
    border: none;
    padding: 0;
    display: none;
-   margin-left: 1rem;
+   margin-right: 1rem;
 }
 
 #nav-content #menu-icon span {
    display: block;
    width: 25px;
    height: 2px;
-   background: var(--light-color);
+   background: var(--primary-color);
 }
 
 #nav-content #menu-icon span:first-child {
@@ -169,7 +169,7 @@ h6 {
 #nav-content #menu .item a:before {
    content: "";
    position: absolute;
-   background: #2497DC;
+   background: var(--primary-color);
    width: 70%;
    height: 1.5px;
    left: 0;
@@ -180,11 +180,11 @@ h6 {
 }
 
 #nav-content #menu .item .active {
-   color: #2497DC;
+   color: var(--primary-color);
 }
 
 #nav-content #menu .item a:hover {
-   color: #2497DC;
+   color: var(--primary-color);
 }
 
 #nav-content #menu .item .active:before,
@@ -199,7 +199,7 @@ h6 {
    outline: none;
    color: var(--light-color);
    padding: .5rem 1rem;
-   font-size: 1rem;
+   font-size: .8rem;
    background: #79C4F1;
    font-weight: bold;
    text-transform: uppercase;
@@ -211,7 +211,7 @@ h6 {
 #nav-content .contact-btn:hover {
    background: #0007;
    color: var(--light-color);
-   box-shadow: inset 50px -50px 100px #55B0E7, 0 0 30px #2497DC;
+   box-shadow: inset 50px -50px 100px #55B0E7, 0 0 30px var(--primary-color);
 }
 
 
@@ -227,7 +227,7 @@ h6 {
    width: 400px;
    height: 400px;
    background: #79C4F1;
-   box-shadow: inset 50px -50px 100px #55B0E7, 50px 50px 200px #2497DC;
+   box-shadow: inset 50px -50px 100px #55B0E7, 50px 50px 200px var(--primary-color);
    border-radius: 500px;
    top: -200px;
    left: -200px;
@@ -250,44 +250,16 @@ h6 {
 }
 
 
-@keyframes text_anim {
-   0% {
-      background: linear-gradient(#fff, #2497DC);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-   }
-
-   40% {
-      background: linear-gradient(#fff, #2497DC, #fff, #2497DC);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-   }
-
-   80% {
-      background: linear-gradient(#fff, #2497DC, #fff, #2497DC, #fff, #2497DC);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-   }
-
-   100% {
-      background: linear-gradient(#fff, #2497DC, #fff, #2497DC, #fff, #2497DC, #fff);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-
-   }
-}
-
-
 #header-content .content .title {
    max-width: 600px;
    font-size: 3rem;
    letter-spacing: 2px;
    font-weight: 800;
    text-transform: uppercase;
+   background: linear-gradient(#fff, var(--primary-color));
+   background-clip: text;
+   -webkit-background-clip: text;
+   color: transparent;
    margin-bottom: 3rem;
    /* -webkit-box-reflect: below -30px linear-gradient(rgba(0, 0, 0, .1), white); */
    animation: text_anim 3s linear infinite;
@@ -300,7 +272,7 @@ h6 {
    background: transparent;
    width: 30%;
    margin: 20px 0;
-   box-shadow: inset 50px -50px 100px #55B0E7, 0 0 30px #2497DC;
+   box-shadow: inset 50px -50px 100px #55B0E7, 0 0 30px var(--primary-color);
 }
 
 #header-content .content .learn_more {
@@ -320,7 +292,7 @@ h6 {
 }
 
 #header-content .content .learn_more:hover {
-   box-shadow: inset 50px -50px 100px #55B0E7, 0 0 30px #2497DC;
+   box-shadow: inset 50px -50px 100px #55B0E7, 0 0 30px var(--primary-color);
    background: #0007;
    color: var(--light-color);
 }
@@ -344,7 +316,7 @@ h6 {
 }
 
 .whatsapp:hover {
-   box-shadow: inset 50px -50px 100px #55B0E7, 0 0 30px #2497DC;
+   box-shadow: inset 50px -50px 100px #55B0E7, 0 0 30px var(--primary-color);
 }
 
 
@@ -379,6 +351,10 @@ h6 {
 
 
 @media only screen and (max-width: 700px) {
+   #nav-content {
+      height: 60px;
+   }
+
    #nav-content .logo {
       font-size: 1.5rem;
    }
@@ -423,7 +399,7 @@ h6 {
 
 #main .about-content .title {
    text-align: center;
-   background: linear-gradient(to left, #fff, #2497DC);
+   background: linear-gradient(to left, #fff, var(--primary-color));
    background-clip: text;
    -webkit-background-clip: text;
    color: transparent;
